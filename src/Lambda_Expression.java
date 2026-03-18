@@ -23,6 +23,8 @@ public class Lambda_Expression {
         System.out.println("Addition: " + addOperation.operate(5, 3)); // Output: 8
         System.out.println("Multiplication: " + multiplyOperation.operate(5, 3));
 
+        // There's no need to even provide parameter types because they can be inferred from the context. The compiler knows that the operate method takes two integers and returns an integer, so it can infer the types of a and b.
+        // So the things get even smaller, lighter and more readable. This is the beauty of lambda expressions in Java. They allow us to write concise and functional code without the boilerplate of anonymous classes.
     }
 }
 
