@@ -7,5 +7,6 @@ public class Supplier_Demo {
 
         Supplier<String> stringSupplier = () -> "Hey! I'm Supplier.";
         System.out.println(stringSupplier.get());
+
     }
 }
