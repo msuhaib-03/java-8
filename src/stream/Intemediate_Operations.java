@@ -1,5 +1,6 @@
 package stream;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -39,5 +40,19 @@ public class Intemediate_Operations {
         // 6) Skip: It returns a stream that contains the elements of the original stream except the first n elements.
         System.out.println("Skip Stream: ");
         numbers.stream().skip(3).forEach(System.out::println);
+
+        // 7) Peak: It returns a stream that contains the elements of the original stream, but also allows us to perform an action on each element as it is consumed from the stream. It is useful for debugging and logging purposes.
+        long count1 = Stream.iterate(1, x -> x + 1).skip(10).limit(100).peek(System.out::println).count();
+        System.out.println("Peek Stream: " + count1); // Output: 100
+
+        // 8) flatMap: Handles stream of collections, lists or arrays where each element is itself a collection.
+        // Flattens nested structures (lists wihtin lists) so that they can be processed as a single sequence of elements.
+        List<List<String>> listOfLists = Arrays.asList(
+                Arrays.asList("Apple", "Banana"),
+                Arrays.asList("Cherry", "Dates"),
+                Arrays.asList("Elderberry", "Fig")
+        );
+        System.out.println(listOfLists.get(1).get(1));
+        System.out.println(listOfLists.stream().flatMap(x -> x.stream()).map(String::toUpperCase).toList());
     }
 }
