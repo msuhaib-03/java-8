@@ -1,7 +1,6 @@
 package stream;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -38,6 +37,14 @@ public class Terminal_Operations {
         Integer i1 = numbers.stream().findFirst().get();
         System.out.println("Find First Stream: " + i1); // Output: 4
 
+        // 7) toArray: It is used to convert a stream into an array. It is a terminal operation that triggers the processing of the stream and produces a result or a side effect.
+        Object[] array = Stream.of(2,5,1,7).toArray();
+
+        // 8) Min/Max: It is used to find the minimum or maximum element of a stream according to a given comparator. It is a terminal operation that triggers the processing of the stream and produces a result or a side effect.
+        Integer[] arr = {4,5,1,3,2};
+        Optional<Integer> max = Arrays.stream(arr).max(Comparator.naturalOrder());
+        System.out.println("Max Stream: " + max.get()); // Output: 5
+
 
         // ====== FEW EXAMPLES ======
         // 1) Counting occurences of character:
@@ -59,5 +66,7 @@ public class Terminal_Operations {
         // There are other 2 operations: stateless and stateful.
         // Stateless operations are operations that do not depend on the state of the stream and can be executed in parallel. They are intermediate operations that return a new stream. Examples: filter, map.
         // Stateful operations are operations that depend on the state of the stream and cannot be executed in parallel. They are intermediate operations that return a new stream. Examples: sorted, distinct, limit, skip.
+
+
     }
 }
