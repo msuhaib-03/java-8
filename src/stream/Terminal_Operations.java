@@ -55,5 +55,9 @@ public class Terminal_Operations {
         System.out.println("Square Values and Sort Stream: ");
         sorted.forEach(System.out::println); // Output: 64, 144, 1156, 4489, 1089
 
+
+        // There are other 2 operations: stateless and stateful.
+        // Stateless operations are operations that do not depend on the state of the stream and can be executed in parallel. They are intermediate operations that return a new stream. Examples: filter, map.
+        // Stateful operations are operations that depend on the state of the stream and cannot be executed in parallel. They are intermediate operations that return a new stream. Examples: sorted, distinct, limit, skip.
     }
 }
