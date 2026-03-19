@@ -3,6 +3,7 @@ package stream;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Terminal_Operations {
     public static void main(String[] args) {
@@ -36,5 +37,23 @@ public class Terminal_Operations {
 
         Integer i1 = numbers.stream().findFirst().get();
         System.out.println("Find First Stream: " + i1); // Output: 4
+
+
+        // ====== FEW EXAMPLES ======
+        // 1) Counting occurences of character:
+        String sentence = "Hey, I'm Suhaib and I'm learning Java Stream API with lambda expressions.";
+        long count = sentence.chars().filter(x -> x == 'i').count(); // we use chars() method to convert the string into an IntStream of characters, then we filter the stream to keep only the characters that are equal to 'i', and finally we count the number of elements in the filtered stream.
+        System.out.println("Count Occurences Stream: " + count); // Output: 5
+
+        // 2) Summing Values:
+        List<Integer> sum = List.of(8,12,99,34,67);
+        Integer i2 = sum.stream().reduce(Integer::sum).get();
+        System.out.println("Summing Values Stream: " + i2); // Output: 220
+
+        // 3) Square Values and Sort:
+        Stream<Integer> sorted = sum.stream().map(x -> x * x).sorted();
+        System.out.println("Square Values and Sort Stream: ");
+        sorted.forEach(System.out::println); // Output: 64, 144, 1156, 4489, 1089
+
     }
 }
