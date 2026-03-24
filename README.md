@@ -26,6 +26,7 @@ Runnable r1 = new Runnable() {
 Runnable r2 = () -> System.out.println("Hello from Lambda!");
 
 
+
 ## Stream API
 The Stream API processes collections of data in a declarative way (similar to SQL).
 It supports operations like filtering, mapping, sorting, and reducing.
