@@ -54,5 +54,9 @@ public class Intemediate_Operations {
         );
         System.out.println(listOfLists.get(1).get(1));
         System.out.println(listOfLists.stream().flatMap(x -> x.stream()).map(String::toUpperCase).toList());
+
+        // 9) forEachOrdered: It is used to perform an action for each element of a stream in the encounter order of the stream. It is a terminal operation that triggers the processing of the stream and produces a result or a side effect.
+        // When we use forEach() method on a parallel stream, the order of the elements is not guaranteed. If we want to maintain the order of the elements, we can use forEachOrdered() method instead of forEach() method.
+        numbers.parallelStream().forEachOrdered(System.out::println);
     }
 }
